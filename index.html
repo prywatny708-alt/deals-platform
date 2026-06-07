@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okazje.pl - Najlepsze Oferty i Rabaty</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🎁 Okazje.pl</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#categories">Kategorie</a></li>
+                <li><a href="#coupons">Kupony</a></li>
+                <li><a href="#freebies">Za Darmo</a></li>
+                <li><a href="#discussions">Dyskusje</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <input type="text" class="search-bar" placeholder="Szukaj okazji...">
+                <button class="btn-login">Zaloguj się</button>
+                <button class="btn-add-deal">+ Dodaj okazję</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                <button class="filter-btn" data-filter="hot">🔥 Najgorętsze</button>
+                <button class="filter-btn" data-filter="popular">⭐ Popularne</button>
+                <button class="filter-btn" data-filter="newest">🆕 Najnowsze</button>
+            </div>
+            <div class="advanced-filters">
+                <select class="filter-select">
+                    <option>Wszystkie kategorie</option>
+                    <option>Elektronika</option>
+                    <option>Moda</option>
+                    <option>Dom i Ogród</option>
+                    <option>Sport i Turystyka</option>
+                    <option>Książki</option>
+                </select>
+                <select class="filter-select">
+                    <option>Sortuj: Najnowsze</option>
+                    <option>Najpopularniejsze</option>
+                    <option>Najgorętsze</option>
+                    <option>Największa zniżka</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="deals-list" id="dealsList">
+            <!-- Deals będą generowane przez JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal dla dodawania okazji -->
+    <div class="modal" id="addDealModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Dodaj nową okazję</h2>
+            <form id="addDealForm">
+                <input type="text" placeholder="Tytuł okazji" required>
+                <textarea placeholder="Opis okazji" required></textarea>
+                <input type="number" placeholder="Cena normalna (zł)" step="0.01">
+                <input type="number" placeholder="Cena promocyjna (zł)" step="0.01" required>
+                <input type="text" placeholder="Link do oferty" required>
+                <select required>
+                    <option>Wybierz kategorię</option>
+                    <option>Elektronika</option>
+                    <option>Moda</option>
+                    <option>Dom i Ogród</option>
+                    <option>Sport i Turystyka</option>
+                    <option>Książki</option>
+                </select>
+                <button type="submit" class="btn-submit">Dodaj okazję</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
