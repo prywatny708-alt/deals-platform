@@ -3,89 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okazje.pl - Najlepsze Oferty i Rabaty</title>
+    <title>Okazje.pl - Najgorętsze okazje wybrane przez społeczność</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="navbar-brand">
-                <h1>🎁 Okazje.pl</h1>
+            <div class="navbar-left">
+                <div class="navbar-brand">
+                    <div class="logo-circle">O</div>
+                    <span class="brand-text">Okazje</span>
+                </div>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Szukaj okazji, marki...">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Strona Główna</a></li>
-                <li><a href="#categories">Kategorie</a></li>
-                <li><a href="#coupons">Kupony</a></li>
-                <li><a href="#freebies">Za Darmo</a></li>
-                <li><a href="#discussions">Dyskusje</a></li>
-            </ul>
-            <div class="navbar-actions">
-                <input type="text" class="search-bar" placeholder="Szukaj okazji...">
-                <button class="btn-login">Zaloguj się</button>
-                <button class="btn-add-deal">+ Dodaj okazję</button>
+            <div class="navbar-right">
+                <button class="nav-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                    </svg>
+                </button>
+                <button class="nav-icon-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+                <button class="btn-primary">+ Dodaj okazję</button>
             </div>
         </div>
     </nav>
 
-    <!-- Filter Section -->
-    <div class="filter-section">
-        <div class="container">
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">Wszystkie</button>
-                <button class="filter-btn" data-filter="hot">🔥 Najgorętsze</button>
-                <button class="filter-btn" data-filter="popular">⭐ Popularne</button>
-                <button class="filter-btn" data-filter="newest">🆕 Najnowsze</button>
-            </div>
-            <div class="advanced-filters">
-                <select class="filter-select">
-                    <option>Wszystkie kategorie</option>
-                    <option>Elektronika</option>
-                    <option>Moda</option>
-                    <option>Dom i Ogród</option>
-                    <option>Sport i Turystyka</option>
-                    <option>Książki</option>
-                </select>
-                <select class="filter-select">
-                    <option>Sortuj: Najnowsze</option>
-                    <option>Najpopularniejsze</option>
-                    <option>Najgorętsze</option>
-                    <option>Największa zniżka</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content -->
-    <main class="container">
-        <div class="deals-list" id="dealsList">
-            <!-- Deals będą generowane przez JavaScript -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <div class="header-section">
+                <h1 class="main-title">Najgorętsze okazje wybrane przez społeczność</h1>
+                <p class="main-subtitle">Odkryj to, dzięki czemu są polecane i ćwiczą swoją dobrze.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option>Kategoria</option>
+                        <option>Elektronika</option>
+                        <option>Moda</option>
+                        <option>Dom i Ogród</option>
+                        <option>Sport i Turystyka</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option>Sortuj</option>
+                        <option>Najnowsze</option>
+                        <option>Najpopularniejsze</option>
+                        <option>Największa zniżka</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option>Dla mnie</option>
+                        <option>Wszyscy</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- View Options -->
+            <div class="view-options">
+                <span class="view-label">Wszystkie okazje</span>
+                <div class="view-buttons">
+                    <button class="view-btn active">Wiadomość</button>
+                    <button class="view-btn">Najnowsze</button>
+                    <button class="view-btn">Aktualizacje</button>
+                </div>
+            </div>
+
+            <!-- Deals List -->
+            <div class="deals-container" id="dealsList">
+                <!-- Deals will be generated here -->
+            </div>
         </div>
     </main>
 
-    <!-- Modal dla dodawania okazji -->
-    <div class="modal" id="addDealModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Dodaj nową okazję</h2>
-            <form id="addDealForm">
-                <input type="text" placeholder="Tytuł okazji" required>
-                <textarea placeholder="Opis okazji" required></textarea>
-                <input type="number" placeholder="Cena normalna (zł)" step="0.01">
-                <input type="number" placeholder="Cena promocyjna (zł)" step="0.01" required>
-                <input type="text" placeholder="Link do oferty" required>
-                <select required>
-                    <option>Wybierz kategorię</option>
-                    <option>Elektronika</option>
-                    <option>Moda</option>
-                    <option>Dom i Ogród</option>
-                    <option>Sport i Turystyka</option>
-                    <option>Książki</option>
-                </select>
-                <button type="submit" class="btn-submit">Dodaj okazję</button>
-            </form>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-circle">O</div>
+                        <span>Okazje</span>
+                    </div>
+                    <p class="footer-text">Społeczność dzielenia się promami i okazjami. Największa społeczność zakupowników.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Okazje</h4>
+                    <ul>
+                        <li><a href="#">E-mail</a></li>
+                        <li><a href="#">Jak to działa</a></li>
+                        <li><a href="#">Kariera</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bezpieczeństwo</h4>
+                    <ul>
+                        <li><a href="#">Polityka bezpieczeństwa</a></li>
+                        <li><a href="#">Zasady cookies</a></li>
+                        <li><a href="#">Regulamin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Polityka</h4>
+                    <ul>
+                        <li><a href="#">Strona główna</a></li>
+                        <li><a href="#">O nas</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Okazje. Wszystkie prawa zastrzeżone.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
